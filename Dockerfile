@@ -24,6 +24,8 @@ ENV VIRTUAL_ENV=/opt/venv
 RUN python -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+RUN apt-get -y install default-libmysqlclient-dev
+
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
